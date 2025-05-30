@@ -7,18 +7,24 @@ public class Sedan extends Car implements AirCon, Music {
     public static final int FUEL_CAPACITY = 45; // L
     public static final int SEAT_COUNT = 4; // 인
     public static final int TRUCK_SEAT_COUNT = 1; // 인
+    public static final String NAME = "BMW 7";
 
-    public Sedan(String name) {
-        super(SPEED, FUEL_CONSUMPTION, FUEL_CAPACITY, SEAT_COUNT, name);
+    private boolean isOption = false;
+
+
+    public Sedan() {
+        super(SPEED, FUEL_CONSUMPTION, FUEL_CAPACITY, SEAT_COUNT, NAME);
     }
 
     @Override
     void setMode(boolean isOn) {
-        if(isOn) {
+        isOption = isOn;
+        if(isOption) {
             transformTrunk();
-            airConSpeak(isOn);
-            musicSpeak(isOn);
         }
+
+        airConSpeak(isOption);
+        musicSpeak(isOption);
     }
 
     void transformTrunk() {
@@ -27,11 +33,17 @@ public class Sedan extends Car implements AirCon, Music {
 
     @Override
     public void airConSpeak(boolean isOn) {
-        System.out.println(name + " : 에어컨 ON");
+        System.out.println(name + " : 에어컨 " + (isOn ? "ON" : "OFF"));
     }
 
     @Override
     public void musicSpeak(boolean isOn) {
-        System.out.println(name + " : 오디오 ON");
+        System.out.println(name + " : 오디오 " + (isOn ? "ON" : "OFF"));
     }
+
+    public void showOption() {
+        airConSpeak(isOption);
+        musicSpeak(isOption);
+    }
+
 }
