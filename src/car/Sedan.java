@@ -7,13 +7,12 @@ public class Sedan extends Car implements AirCon, Music {
     public static final int FUEL_CAPACITY = 45; // L
     public static final int SEAT_COUNT = 4; // 인
     public static final int TRUCK_SEAT_COUNT = 1; // 인
-    public static final String NAME = "BMW 7";
 
     private boolean isOption = false;
 
 
-    public Sedan() {
-        super(SPEED, FUEL_CONSUMPTION, FUEL_CAPACITY, SEAT_COUNT, NAME);
+    public Sedan(String name) {
+        super(SPEED, FUEL_CONSUMPTION, FUEL_CAPACITY, SEAT_COUNT, name);
     }
 
     @Override

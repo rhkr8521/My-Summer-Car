@@ -51,13 +51,13 @@ public class Main {
 
         switch (carType) {
             case 1:
-                car = new SportsCar("포르쉐~~");
+                car = new SportsCar("포르쉐 711");
                 break;
             case 2:
-                car = new Sedan();
+                car = new Sedan("BMW 7");
                 break;
             case 3:
-//                car = new Bus();
+                car = new Bus("대형버스");
                 break;
         }
 

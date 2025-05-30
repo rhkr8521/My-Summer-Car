@@ -11,6 +11,9 @@ public class Bus extends Car implements AirCon, AutoDrive {
         if (isOn) {
             this.fuelCapacity += 30; // 보조 연료탱크 추가
         }
+
+        airConSpeak(isOn);
+        autoDriveSpeak(isOn);
     }
 
     @Override
