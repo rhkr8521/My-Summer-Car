@@ -12,6 +12,7 @@ public class SportsCar extends Car implements Music, AutoDrive{
                 2, // 좌석: 2
                 name // name: 생성자 입력
         );
+        
         this.baseSpeed = 250;
     }
 

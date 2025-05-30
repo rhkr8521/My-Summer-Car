@@ -19,24 +19,24 @@ public abstract class Car {
     }
 
     // 총 이동 횟수
-    public int moveCount(int passengerCount){
-        return (int) (double) (passengerCount / seatCount);
+    public int moveCount(int passengerCount) {
+        return (int) Math.ceil((double) passengerCount / seatCount);
     }
 
     // 총 연료 소모량
-    private double totalFuelConsumtion(int distance, int passengerCount){
+    private double totalFuelConsumption(int distance, int passengerCount){
         int totalDistance = distance * moveCount(passengerCount);
         return (double) totalDistance / fuelEfficiency;
     }
 
     // 총 주유 횟수
     public int fuelCount(int distance, int passengerCount){
-        return (int) ceil(totalFuelConsumtion(distance, passengerCount) / fuelCapacity);
+        return (int) ceil(totalFuelConsumption(distance, passengerCount) / fuelCapacity);
     }
 
     // 총 비용
     public int totalCost(int distance, int passengerCount){
-        return (int) totalFuelConsumtion(distance, passengerCount) * 2000;
+        return (int) totalFuelConsumption(distance, passengerCount) * 2000;
     }
 
     // 총 이동 시간 (초로 반환)
@@ -51,7 +51,7 @@ public abstract class Car {
             default : break;
         }
 
-        return (int) ((double) distance / speed * moveCount(passengerCount) * weatherSpeed) * 360;
+        return (int) ((double) distance / speed * moveCount(passengerCount) * weatherSpeed) * 3600;
     }
 
     abstract void setMode(boolean isOn);
