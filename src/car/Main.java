@@ -21,6 +21,8 @@ public class Main {
         System.out.print("날씨 [1]맑음 [2]비 [3]눈 : ");
         int weatherType = scanner.nextInt();
 
+//        TODO 오류 처리 필요
+
         Car car = null;
 
         switch (carType) {
@@ -37,11 +39,8 @@ public class Main {
 
         car.setMode(isOption == 1);
 
-
-
         int distance = distances[localType];
         int totalMinute = car.totalMoveTime(distance, passengerCount, weatherType);
-
 
         System.out.println(
             "=".repeat(7) + car.name + "=".repeat(7) + '\n'
@@ -54,13 +53,3 @@ public class Main {
     }
 
 }
-
-/*
-
-포르쉐 911: 오디오 ON
-포르쉐 911: 자율주행 ON
-=======포르쉐 911=======
-총 비용 : 1,100,000원
-총 주유 횟수 : 19회
-총 이동 시간 : 14시간 40분
- */
