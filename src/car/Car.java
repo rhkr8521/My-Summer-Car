@@ -4,6 +4,8 @@ import static java.lang.Math.ceil;
 
 public abstract class Car {
 
+    private final int fuelCost = 2000;
+
     int speed;
     int fuelEfficiency;
     int fuelCapacity;
@@ -36,7 +38,7 @@ public abstract class Car {
 
     // 총 비용
     public int totalCost(int distance, int passengerCount){
-        return (int) totalFuelConsumption(distance, passengerCount) * 2000;
+        return (int) totalFuelConsumption(distance, passengerCount) * fuelCost;
     }
 
     // 총 이동 시간 (초로 반환)
@@ -54,6 +56,7 @@ public abstract class Car {
         return (int) ((double) distance / speed * moveCount(passengerCount) * weatherSpeed) * 3600;
     }
 
+    // 추상화 메서드 (모드)
     abstract void setMode(boolean isOn);
 
 }
