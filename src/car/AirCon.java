@@ -2,5 +2,5 @@ package car;
 
 public interface AirCon {
 
-    void speak(boolean isOn);
+    void airConSpeak(boolean isOn);
 }

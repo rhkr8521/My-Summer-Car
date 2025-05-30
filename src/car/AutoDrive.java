@@ -2,5 +2,5 @@ package car;
 
 public interface AutoDrive {
 
-    void speak(boolean isOn);
+    void autoDriveSpeak(boolean isOn);
 }
